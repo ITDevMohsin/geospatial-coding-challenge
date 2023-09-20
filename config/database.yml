@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: postgres://geospatial_coding_challenge_production_user:QrXvuvEx16mN6TShP2z7I9xfqu3MYiEc@dpg-ck5kskiij1gs73cemb2g-a/geospatial_coding_challenge_production
+  url: postgres://geospatial_coding_challenge_production_user:QrXvuvEx16mN6TShP2z7I9xfqu3MYiEc@dpg-ck5kskiij1gs73cemb2g-a/geospatial_coding_challenge_production
