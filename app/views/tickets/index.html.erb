@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tickets</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+      }
+
+      h1 {
+          text-align: center;
+          font-size: 2.5rem;
+      }
+
+      p {
+          margin-top: 0;
+          margin-bottom: 1rem;
+      }
+
+      code {
+          font-size: 15px;
+          color: darkred;
+          word-wrap: break-word;
+      }
+
+      table {
+          caption-side: bottom;
+          border-collapse: collapse;
+      }
+
+      .table {
+          --bs-table-color: black;
+          --bs-table-bg: transparent;
+          --bs-table-border-color: grey;
+          --bs-table-accent-bg: transparent;
+          --bs-table-striped-color: black;
+          --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+          --bs-table-active-color: black;
+          --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+          --bs-table-hover-color: black;
+          --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+          width: 100%;
+          margin-bottom: 1rem;
+          color: black;
+          vertical-align: top;
+          border-color: grey;
+      }
+
+      tbody, td, tfoot, th, thead, tr {
+          border-style: dotted;
+      }
+
+      .table > thead {
+          vertical-align: bottom;
+      }
+
+      .table > :not(caption) > * > * {
+          padding: 0.5rem 0.5rem;
+          background-color: var(--bs-table-bg);
+          border-bottom-width: 1px;
+          box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+      }
+
+      .table > tbody {
+          vertical-align: inherit;
+      }
+  </style>
+</head>
+<body>
+<h1>Ticket Listing</h1>
+<p>
+  To add tickets, send a POST request to the following endpoint <code> /api/v1/tickets</code>. A sample postman request
+  is added to project root
+  directory. <br>
+</p>
+<table class="table table-striped">
+  <thead class="thead">
+  <tr>
+    <th scope="col">Sr. No.</th>
+    <th scope="col">Contact Center</th>
+    <th scope="col">Request Number</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @tickets.each_with_index do |ticket, index| %>
+    <tr>
+      <th scope="row"><%= index + 1 %></th>
+      <th><%= ticket.contact_center %></th>
+      <th><%= ticket.request_number %></th>
+      <th><%= link_to 'Show Ticket', "tickets/#{ticket.id}" %></th>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</body>
+</html>

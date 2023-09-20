@@ -1,0 +1,37 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contact_center: MyString
+  request_number: MyString
+  reference_request_number: MyString
+  version_number: MyString
+  sequence_number: MyString
+  request_type: MyString
+  request_action: MyString
+  request_taken_datetime: 2023-09-19 13:04:06
+  transmission_datetime: 2023-09-19 13:04:06
+  legal_datetime: 2023-09-19 13:04:06
+  response_due_datetime: 2023-09-19 13:04:06
+  restake_date: 2023-09-19 13:04:06
+  expiration_date: 2023-09-19 13:04:06
+  lp_meeting_accept_due_date: 2023-09-19 13:04:06
+  overhead_begin_date: 2023-09-19 13:04:06
+  overhead_end_date: 2023-09-19 13:04:06
+
+two:
+  contact_center: MyString
+  request_number: MyString
+  reference_request_number: MyString
+  version_number: MyString
+  sequence_number: MyString
+  request_type: MyString
+  request_action: MyString
+  request_taken_datetime: 2023-09-19 13:04:06
+  transmission_datetime: 2023-09-19 13:04:06
+  legal_datetime: 2023-09-19 13:04:06
+  response_due_datetime: 2023-09-19 13:04:06
+  restake_date: 2023-09-19 13:04:06
+  expiration_date: 2023-09-19 13:04:06
+  lp_meeting_accept_due_date: 2023-09-19 13:04:06
+  overhead_begin_date: 2023-09-19 13:04:06
+  overhead_end_date: 2023-09-19 13:04:06

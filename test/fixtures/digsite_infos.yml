@@ -1,0 +1,45 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  excavation_info: one
+  lookup_by: MyString
+  location_type: MyString
+  subdivision: MyString
+  address_state: MyString
+  address_county: MyString
+  address_place: MyString
+  address_zip: MyString
+  address_num: MyString
+  address_street_prefix: MyString
+  address_street_name: MyString
+  address_street_type: MyString
+  address_street_suffix: MyString
+  near_street_state: MyString
+  near_street_county: MyString
+  near_street_place: MyString
+  near_street_prefix: MyString
+  near_street_name: MyString
+  near_street_type: MyString
+  near_street_suffix: MyString
+
+two:
+  excavation_info: two
+  lookup_by: MyString
+  location_type: MyString
+  subdivision: MyString
+  address_state: MyString
+  address_county: MyString
+  address_place: MyString
+  address_zip: MyString
+  address_num: MyString
+  address_street_prefix: MyString
+  address_street_name: MyString
+  address_street_type: MyString
+  address_street_suffix: MyString
+  near_street_state: MyString
+  near_street_county: MyString
+  near_street_place: MyString
+  near_street_prefix: MyString
+  near_street_name: MyString
+  near_street_type: MyString
+  near_street_suffix: MyString

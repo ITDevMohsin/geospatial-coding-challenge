@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ticket Details</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    code {
+        font-size: 15px;
+        color: darkred;
+        word-wrap: break-word;
+    }
+
+    table {
+        caption-side: bottom;
+        border-collapse: collapse;
+    }
+
+    .table {
+        --bs-table-color: black;
+        --bs-table-bg: transparent;
+        --bs-table-border-color: grey;
+        --bs-table-accent-bg: transparent;
+        --bs-table-striped-color: black;
+        --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+        --bs-table-active-color: black;
+        --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+        --bs-table-hover-color: black;
+        --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+        width: 100%;
+        margin-bottom: 1rem;
+        color: black;
+        vertical-align: top;
+        border-color: grey;
+    }
+
+    tbody, td, tfoot, th, thead, tr {
+        border-style: dotted;
+    }
+
+    .table > thead {
+        vertical-align: bottom;
+    }
+
+    .table > :not(caption) > * > * {
+        padding: 0.5rem 0.5rem;
+        background-color: var(--bs-table-bg);
+        border-bottom-width: 1px;
+        box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+    }
+
+    .table > tbody {
+        vertical-align: inherit;
+    }
+</style>
+<body>
+<div class="container mt-4">
+  <h1>Ticket Details</h1>
+  <table class="table table-striped">
+    <tbody>
+    <tr>
+      <td>Request Number</td>
+      <td><%= @ticket.request_number %></td>
+    </tr>
+    <tr>
+      <td>Sequence Number</td>
+      <td><%= @ticket.sequence_number %></td>
+    </tr>
+    <tr>
+      <td>Request Type</td>
+      <td><%= @ticket.request_type %></td>
+    </tr>
+    <tr>
+      <td>Request Action</td>
+      <td><%= @ticket.request_action %></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+
+<div id="map" style="width: 600px; height: 400px;"></div>
+</html>
+<script>
+    var map = L.map('map').setView([32.059714616150146, -81.07984495242422], 11); // Some default coordinates and zoom
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    polygon = L.polygon([[32.07206917625161, -81.13390268058475], [32.04064386441295, -81.14660562247929], [32.02259853170128, -81.08858407706913], [32.02434500961698, -81.05322183341679], [32.042681017283066, -81.05047525138554], [32.06537765335268, -81.0319358226746], [32.078469305179404, -81.01202310294804], [32.07963291684719, -81.02850259513554], [32.07090546831167, -81.07759774894413], [32.08806865844325, -81.12154306144413], [32.07206917625161, -81.13390268058475]]).addTo(map)
+</script>

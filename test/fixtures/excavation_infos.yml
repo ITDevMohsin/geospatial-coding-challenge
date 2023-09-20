@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticket: one
+  type_of_work: MyString
+  work_done_for: MyString
+  project_duration: MyString
+  project_start_date: 2023-09-19 13:06:45
+  explosives: MyString
+  underground_overhead: MyString
+  horizontal_boring: MyString
+  whitelined: MyString
+  locate_instructions: MyText
+  remarks: MyText
+
+two:
+  ticket: two
+  type_of_work: MyString
+  work_done_for: MyString
+  project_duration: MyString
+  project_start_date: 2023-09-19 13:06:45
+  explosives: MyString
+  underground_overhead: MyString
+  horizontal_boring: MyString
+  whitelined: MyString
+  locate_instructions: MyText
+  remarks: MyText

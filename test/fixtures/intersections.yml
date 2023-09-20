@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  digsite_info: one
+  intersection_state: MyString
+  intersection_county: MyString
+  intersection_place: MyString
+  intersection_prefix: MyString
+  intersection_name: MyString
+  intersection_type: MyString
+  intersection_suffix: MyString
+
+two:
+  digsite_info: two
+  intersection_state: MyString
+  intersection_county: MyString
+  intersection_place: MyString
+  intersection_prefix: MyString
+  intersection_name: MyString
+  intersection_type: MyString
+  intersection_suffix: MyString
