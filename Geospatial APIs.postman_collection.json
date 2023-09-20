@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "eb9b7d20-7b0d-46e8-a6a8-13759c364f72",
+		"name": "Geospatial APIs",
+		"description": "# 🚀 Get started here\n\nThis collection guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this collection**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these request types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT and PATCH requests.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a variable called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more scripts in \"Tests\" to verify if the API works as expected and execute flows.\n    \n\n## ℹ️ Resources\n\n[Building requests](https://learning.postman.com/docs/sending-requests/requests/)  \n[Authorizing requests](https://learning.postman.com/docs/sending-requests/authorization/)  \n[Using variables](https://learning.postman.com/docs/sending-requests/variables/)  \n[Managing environments](https://learning.postman.com/docs/sending-requests/managing-environments/)  \n[Writing scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9849383"
+	},
+	"item": [
+		{
+			"name": "Post data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ContactCenter\": \"UPCA\",\n  \"RequestNumber\": \"09252012-00001\",\n  \"ReferenceRequestNumber\": \"\",\n  \"VersionNumber\": \"0\",\n  \"SequenceNumber\": \"2421\",\n  \"RequestType\": \"Normal\",\n  \"RequestAction\": \"Restake\",\n  \"DateTimes\": {\n    \"RequestTakenDateTime\": \"2011/07/02 23:09:38\",\n    \"TransmissionDateTime\": \"\",\n    \"LegalDateTime\": \"2011/07/08 07:00:00\",\n    \"ResponseDueDateTime\": \"2011/07/13 23:59:59\",\n    \"RestakeDate\": \"2011/07/21 00:00:00\",\n    \"ExpirationDate\": \"2011/07/26 00:00:00\",\n    \"LPMeetingAcceptDueDate\": \"\",\n    \"OverheadBeginDate\": \"\",\n    \"OverheadEndDate\": \"\"\n  },\n  \"ServiceArea\": {\n    \"PrimaryServiceAreaCode\": {\n      \"SACode\": \"ZZGL103\"\n    },\n    \"AdditionalServiceAreaCodes\": {\n      \"SACode\": [\n        \"ZZL01\",\n        \"ZZL02\",\n        \"ZZL03\"\n      ]\n    }\n  },\n  \"Excavator\": {\n    \"CompanyName\": \"John Doe CONSTRUCTION\",\n    \"Address\": \"555 Some RD\",\n    \"City\": \"SOME PARK\",\n    \"State\": \"ZZ\",\n    \"Zip\": \"55555\",\n    \"Type\": \"Excavator\",\n    \"Contact\": {\n      \"Name\": \"Johnny Doe\",\n      \"Phone\": \"1115552345\",\n      \"Email\": \"example@example.com\"\n    },\n    \"FieldContact\": {\n      \"Name\": \"Field Contact\",\n      \"Phone\": \"1235557924\",\n      \"Email\": \"example@example.com\"\n    },\n    \"CrewOnsite\": \"true\"\n  },\n  \"ExcavationInfo\": {\n    \"TypeOfWork\": \"rpr man hole tops\",\n    \"WorkDoneFor\": \"gpc\",\n    \"ProjectDuration\": \"60 days\",\n    \"ProjectStartDate\": \"2011/07/08 07:00:00\",\n    \"Explosives\": \"No\",\n    \"UndergroundOverhead\": \"Underground\",\n    \"HorizontalBoring\": \"Road, Driveway, and Sidewalk\",\n    \"Whitelined\": \"No\",\n    \"LocateInstructions\": \"locate along the r/o/w on both sides of the rd - including the rd itself - from inter to inter\",\n    \"Remarks\": \"Previous Request Number:05161-120-011\\n\\nPrevious Request Number:06044-254-020\\n\\nPrevious Request Number:06171-300-030\",\n    \"DigsiteInfo\": {\n      \"LookupBy\": \"MANUAL\",\n      \"LocationType\": \"Multiple Address\",\n      \"Subdivision\": \"\",\n      \"AddressInfo\": {\n        \"State\": \"ST\",\n        \"County\": \"COUNTY\",\n        \"Place\": \"PLACE\",\n        \"Zip\": \"\",\n        \"Address\": {\n          \"AddressNum\": [\n            \"Address 1\",\n            \"Address 2\"\n          ]\n        },\n        \"Street\": {\n          \"Prefix\": \"\",\n          \"Name\": \"Trinity\",\n          \"Type\": \"Ave\",\n          \"Suffix\": \"SW\"\n        }\n      },\n      \"NearStreet\": {\n        \"State\": \"XX\",\n        \"County\": \"SomeCounty\",\n        \"Place\": \"City\",\n        \"Prefix\": \"\",\n        \"Name\": \"\",\n        \"Type\": \"\",\n        \"Suffix\": \"\"\n      },\n      \"Intersection\": [\n        {\n          \"State\": \"XX\",\n          \"County\": \"FULERTON\",\n          \"Place\": \"NORCROSS\",\n          \"Prefix\": \"\",\n          \"Name\": \"London\",\n          \"Type\": \"St\",\n          \"Suffix\": \"SW\"\n        }\n      ],\n      \"WellKnownText\": \"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))\"\n    }\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/tickets",
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
