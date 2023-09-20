@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "Post data",
+			"name": "Post data - Local",
 			"event": [
 				{
 					"listen": "test",
@@ -36,6 +36,39 @@
 					}
 				},
 				"url": "http://localhost:3000/api/v1/tickets",
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "Post  data - Production",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ContactCenter\": \"UPCA\",\n  \"RequestNumber\": \"09252012-00001\",\n  \"ReferenceRequestNumber\": \"\",\n  \"VersionNumber\": \"0\",\n  \"SequenceNumber\": \"2421\",\n  \"RequestType\": \"Normal\",\n  \"RequestAction\": \"Restake\",\n  \"DateTimes\": {\n    \"RequestTakenDateTime\": \"2011/07/02 23:09:38\",\n    \"TransmissionDateTime\": \"\",\n    \"LegalDateTime\": \"2011/07/08 07:00:00\",\n    \"ResponseDueDateTime\": \"2011/07/13 23:59:59\",\n    \"RestakeDate\": \"2011/07/21 00:00:00\",\n    \"ExpirationDate\": \"2011/07/26 00:00:00\",\n    \"LPMeetingAcceptDueDate\": \"\",\n    \"OverheadBeginDate\": \"\",\n    \"OverheadEndDate\": \"\"\n  },\n  \"ServiceArea\": {\n    \"PrimaryServiceAreaCode\": {\n      \"SACode\": \"ZZGL103\"\n    },\n    \"AdditionalServiceAreaCodes\": {\n      \"SACode\": [\n        \"ZZL01\",\n        \"ZZL02\",\n        \"ZZL03\"\n      ]\n    }\n  },\n  \"Excavator\": {\n    \"CompanyName\": \"John Doe CONSTRUCTION\",\n    \"Address\": \"555 Some RD\",\n    \"City\": \"SOME PARK\",\n    \"State\": \"ZZ\",\n    \"Zip\": \"55555\",\n    \"Type\": \"Excavator\",\n    \"Contact\": {\n      \"Name\": \"Johnny Doe\",\n      \"Phone\": \"1115552345\",\n      \"Email\": \"example@example.com\"\n    },\n    \"FieldContact\": {\n      \"Name\": \"Field Contact\",\n      \"Phone\": \"1235557924\",\n      \"Email\": \"example@example.com\"\n    },\n    \"CrewOnsite\": \"true\"\n  },\n  \"ExcavationInfo\": {\n    \"TypeOfWork\": \"rpr man hole tops\",\n    \"WorkDoneFor\": \"gpc\",\n    \"ProjectDuration\": \"60 days\",\n    \"ProjectStartDate\": \"2011/07/08 07:00:00\",\n    \"Explosives\": \"No\",\n    \"UndergroundOverhead\": \"Underground\",\n    \"HorizontalBoring\": \"Road, Driveway, and Sidewalk\",\n    \"Whitelined\": \"No\",\n    \"LocateInstructions\": \"locate along the r/o/w on both sides of the rd - including the rd itself - from inter to inter\",\n    \"Remarks\": \"Previous Request Number:05161-120-011\\n\\nPrevious Request Number:06044-254-020\\n\\nPrevious Request Number:06171-300-030\",\n    \"DigsiteInfo\": {\n      \"LookupBy\": \"MANUAL\",\n      \"LocationType\": \"Multiple Address\",\n      \"Subdivision\": \"\",\n      \"AddressInfo\": {\n        \"State\": \"ST\",\n        \"County\": \"COUNTY\",\n        \"Place\": \"PLACE\",\n        \"Zip\": \"\",\n        \"Address\": {\n          \"AddressNum\": [\n            \"Address 1\",\n            \"Address 2\"\n          ]\n        },\n        \"Street\": {\n          \"Prefix\": \"\",\n          \"Name\": \"Trinity\",\n          \"Type\": \"Ave\",\n          \"Suffix\": \"SW\"\n        }\n      },\n      \"NearStreet\": {\n        \"State\": \"XX\",\n        \"County\": \"SomeCounty\",\n        \"Place\": \"City\",\n        \"Prefix\": \"\",\n        \"Name\": \"\",\n        \"Type\": \"\",\n        \"Suffix\": \"\"\n      },\n      \"Intersection\": [\n        {\n          \"State\": \"XX\",\n          \"County\": \"FULERTON\",\n          \"Place\": \"NORCROSS\",\n          \"Prefix\": \"\",\n          \"Name\": \"London\",\n          \"Type\": \"St\",\n          \"Suffix\": \"SW\"\n        }\n      ],\n      \"WellKnownText\": \"POLYGON((-81.13390268058475 32.07206917625161,-81.14660562247929 32.04064386441295,-81.08858407706913 32.02259853170128,-81.05322183341679 32.02434500961698,-81.05047525138554 32.042681017283066,-81.0319358226746 32.06537765335268,-81.01202310294804 32.078469305179404,-81.02850259513554 32.07963291684719,-81.07759774894413 32.07090546831167,-81.12154306144413 32.08806865844325,-81.13390268058475 32.07206917625161))\"\n    }\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://geospatial-coding-challenge-mohsin.onrender.com/api/v1/tickets",
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
 			"response": []
