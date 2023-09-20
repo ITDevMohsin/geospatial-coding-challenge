@@ -1,0 +1,18 @@
+databases:
+  - name: mysite
+    databaseName: mysite
+    user: mysite
+
+services:
+  - type: web
+    name: mysite
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: postgres://geospatial_coding_challenge_production_user:QrXvuvEx16mN6TShP2z7I9xfqu3MYiEc@dpg-ck5kskiij1gs73cemb2g-a/geospatial_coding_challenge_production
+        fromDatabase:
+          name: mysite
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
