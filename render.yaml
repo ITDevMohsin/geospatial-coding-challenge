@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: geospatial-coding-challenge-production
+    databaseName: geospatial_coding_challenge_production
+    user: geospatial_coding_challenge_production_user
 
 services:
   - type: web
-    name: mysite
+    name: sh
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: postgres://geospatial_coding_challenge_production_user:QrXvuvEx16mN6TShP2z7I9xfqu3MYiEc@dpg-ck5kskiij1gs73cemb2g-a/geospatial_coding_challenge_production
         fromDatabase:
-          name: mysite
+          name: geospatial_coding_challenge_production
           property: connectionString
       - key: b5ba75a020c6da67973888e76b90bd09
         sync: false
